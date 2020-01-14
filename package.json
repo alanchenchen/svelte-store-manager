@@ -1,6 +1,6 @@
 {
   "name": "@alanchenchen/svelte-store",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Alan Chen",
   "description": "A store manager like vuex for svelte 3 with svelte/store",
   "svelte": "src/index.svelte",
