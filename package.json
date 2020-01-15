@@ -1,9 +1,9 @@
 {
   "name": "@alanchenchen/svelte-store",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Alan Chen",
   "description": "A store manager like vuex for svelte 3 with svelte/store",
-  "svelte": "src/index.svelte",
+  "module": "dist/index.mjs",
   "main": "dist/index.js",
   "pluginName": {
     "from": "src/plugins/logger.ts",

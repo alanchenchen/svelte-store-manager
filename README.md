@@ -8,7 +8,7 @@
 A store manager like vuex for svelte 3 with svelte/store
 > Author：Alan Chen
 
-> Version: 0.0.5
+> Version: 0.0.6
 
 > Date: 2020/1/15
 
