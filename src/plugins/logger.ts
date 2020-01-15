@@ -1,4 +1,4 @@
-import Store from "../core";
+import { storeType } from "../core";
 
 export declare interface options {
     filter?: (type?: string, prev?: object, next?: object) => boolean;
@@ -12,7 +12,7 @@ export default ({
     filter = () => true,
     collapsed = true
 }: options = {}) => {
-    return (store: Store) => {
+    return (store: storeType) => {
         const cache = {
             prev: store.state(),
             next: store.state()

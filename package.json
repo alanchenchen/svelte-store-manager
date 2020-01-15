@@ -1,13 +1,18 @@
 {
   "name": "@alanchenchen/svelte-store",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "author": "Alan Chen",
   "description": "A store manager like vuex for svelte 3 with svelte/store",
   "svelte": "src/index.svelte",
-  "module": "dist/index.mjs",
   "main": "dist/index.js",
+  "pluginName": {
+    "from": "src/plugins/logger.ts",
+    "to": "dist/plugins/logger.js"
+  },
   "scripts": {
-    "build": "rollup -c",
+    "build:plugin": "rollup -c ./rollup.logger.js",
+    "build:core": "rollup -c",
+    "build": "npm run build:plugin && npm run build:core",
     "prepublishOnly": "npm run build"
   },
   "license": "996.ICU",
@@ -30,7 +35,6 @@
     "store-manager"
   ],
   "files": [
-    "src",
     "dist"
   ],
   "repository": {

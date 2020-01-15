@@ -81,21 +81,21 @@ declare class Store extends EventWather {
     /**
      * get getter value or bind svelte component varible to getter value.
      *
-     * @param key
+     * @param key required, registed key.
      * @param bindValueCallback  if undefined, will return getter value, usually use in js file. Else bind varible with callback function, usually use in svelte component, since you have to add reactivity to svelte varible.
      */
     getter(key: string, bindValueCallback?: bindStateCallback): any;
     /**
      * the only way to change store state, usually change syncly.
      *
-     * @param key
+     * @param key required, registed key.
      * @param payload
      */
     commit(key: string, ...payload: any[]): void;
     /**
      * change store state asyncly.
      *
-     * @param key
+     * @param key required, registed key.
      * @param payload
      */
     dispatch(key: string, ...payload: any[]): void;
@@ -109,13 +109,14 @@ declare class Store extends EventWather {
 /**
  * create a store manager.All operations depend on it.
  *
- * @param initial
+ * @param initial required, initial state data.
+ * @param name optional, store name, it's usually used by store plugin, as logger and persisted-state.
  */
 declare const createStore: (initial: any, name?: string) => Store;
 /**
  * use global plugin, will effect all store instance.
  *
- * @param pluginList
+ * @param pluginList required
  */
 declare const useGlobalPlugins: (pluginList: storePlugin[]) => void;
 export { createStore, useGlobalPlugins };

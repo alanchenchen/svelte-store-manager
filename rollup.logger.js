@@ -7,14 +7,19 @@ import progress from "rollup-plugin-progress";
 
 import pkg from "./package.json";
 
-const name = pkg.name
+const { pluginName } = pkg;
+const name = pluginName.from
 	.replace(/^(@\S+\/)?(svelte-)?(\S+)/, "$3")
 	.replace(/^\w/, m => m.toUpperCase())
 	.replace(/-\w/g, m => m[1].toUpperCase());
 
 export default {
-	input: "src/index.ts",
-	output: { file: `${pkg.main}`, format: "umd", name },
+	input: pluginName.from,
+	output: {
+		file: pluginName.to,
+		format: "umd",
+		name
+	},
 	plugins: [
 		ts({
 			include: ["src/**/*"],

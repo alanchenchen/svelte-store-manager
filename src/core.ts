@@ -8,7 +8,8 @@ import {
     context
 } from "./type";
 
-export declare type storePlugin = (store: Store) => void
+export declare type storePlugin = (store: Store) => void;
+export declare type storeType = Store;
 
 export default class Store extends EventWather {
     /**
@@ -114,7 +115,7 @@ export default class Store extends EventWather {
     /**
      * get getter value or bind svelte component varible to getter value.
      * 
-     * @param key
+     * @param key required, registed key.
      * @param bindValueCallback  if undefined, will return getter value, usually use in js file. Else bind varible with callback function, usually use in svelte component, since you have to add reactivity to svelte varible.
      */
     getter(key: string, bindValueCallback?: bindStateCallback): any {
@@ -145,7 +146,7 @@ export default class Store extends EventWather {
     /**
      * the only way to change store state, usually change syncly.
      * 
-     * @param key
+     * @param key required, registed key.
      * @param payload
      */
     commit(key: string, ...payload: any[]) {
@@ -157,7 +158,7 @@ export default class Store extends EventWather {
                             v[key] = values[key];
                         } else {
                             console.warn(`property '${key}' is not existed on store state`);
-                            break;
+                            continue;
                         }
                     }
                     return v;
@@ -182,7 +183,7 @@ export default class Store extends EventWather {
     /**
      * change store state asyncly.
      * 
-     * @param key
+     * @param key required, registed key.
      * @param payload
      */
     dispatch(key: string, ...payload: any[]) {

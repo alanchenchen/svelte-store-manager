@@ -1,2 +1,4 @@
-src/
+src
+example
+docs
 yarn.lock
