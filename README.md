@@ -16,7 +16,7 @@ A store manager like vuex for svelte 3 with svelte/store
 1. 仿vuex和redux的api。
 2. 自带plugin接口，可以开发基于store的plugin，内置logger插件。
 3. 基于svelte/store开发，本身自带响应性，实现svelte中变量绑定store。
-4. 体积小，压缩后仅3.4k，只自带核心功能，为了开发调试方式，将logger内置，建议当项目上线时可以去掉logger。
+4. 体积小，压缩后仅3.4k，只自带核心功能，为了开发调试方便，将logger内置，建议当项目上线时可以去掉logger。
 5. 虽然和vuex相似，但是不自带module功能，因为每个store均是一个module，如果想实现集中式管理，可以参考[案例](./example/README.md)。
 
 ## installation
@@ -51,7 +51,7 @@ store.registerAction()
 ```html
 // App.Svelte
 <script>
-    import store from "../moduleAlan";
+    import store from "../store/moduleAlan";
 
     let firstname;
     let double;

@@ -1,13 +1,10 @@
-export declare type bindStateCallback = (v: object) => void;
-
-export declare type bindGetterCallback = (v: object) => object;
-
-export declare type getter = (key: string, bindValueCallback?: bindStateCallback) => any
+export declare type bindStateCallback = (val: object) => void;
 
 export declare type getterRegiste = {
-    [T: string] : bindGetterCallback
+    [T: string] : (state: object) => object;
 }
 
+export declare type getter = (key: string, bindValueCallback?: bindStateCallback) => any
 export declare type setState = (val: object) => void
 export declare type commit = (key: string, ...payload: any[]) => void
 export declare type dispatch = (key: string, ...payload: any[]) => void

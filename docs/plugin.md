@@ -8,7 +8,7 @@
 export default () => {
     return (store: Store) => {
         /**
-         * 无论是监听mutation还是action事件，回调函数都只有一个，对象的type表示mutation或action的类型，payload则是传入的参数列表.
+         * 无论是监听mutation还是action事件，回调函数都只有一个参数，对象的type表示mutation或action的类型，payload则是传入的参数列表.
          */
         store.$subscribe("mutation", ({ type, payload }) => {
             console.log("当前store是：", store.name);
