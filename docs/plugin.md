@@ -15,6 +15,7 @@ export default () => {
             console.log("当前mutation类型是：", type);
             console.log("当前mutation参数列表是：", payload);
             console.log("mutation之后的状态是：", store.state());
+            console.log("当前store是否将使用全局插件：", store.willUseGlobalPlugin);
         });
     }
 }

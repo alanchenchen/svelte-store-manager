@@ -8,9 +8,9 @@
 A store manager like vuex for svelte 3 with svelte/store
 > Author：Alan Chen
 
-> Version: 0.0.6
+> Version: 0.0.7
 
-> Date: 2020/1/15
+> Date: 2020/1/19
 
 ## features
 1. 仿vuex和redux的api。
@@ -20,7 +20,7 @@ A store manager like vuex for svelte 3 with svelte/store
 5. 虽然和vuex相似，但是不自带module功能，因为每个store均是一个module，如果想实现集中式管理，可以参考[案例](./example/README.md)。
 
 ## installation
-`npm install --save @alanchenchen/svelte-store` or `yarn add @alanchenchen/svelte-store`
+`npm install --save-dev @alanchenchen/svelte-store` or `yarn add @alanchenchen/svelte-store --dev`
 
 ## usage
 ```js

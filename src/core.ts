@@ -16,6 +16,7 @@ export default class Store extends EventWather {
      * current store manager name.
      */
     public name: string;
+    public willUseGlobalPlugin: boolean = false;
     public _state: Writable<any>;
     private _cache: object;
     private _getters: getterRegiste;
@@ -47,6 +48,9 @@ export default class Store extends EventWather {
     private _initGlobalPlugin() {
         if ((this as any)._globalPlugins) {
             for (const plugin of (this as any)._globalPlugins) {
+                if (this.willUseGlobalPlugin === false) {
+                    this.willUseGlobalPlugin = true;
+                }
                 this.use(plugin);
             }
         }

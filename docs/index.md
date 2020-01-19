@@ -2,6 +2,7 @@
 npm包导出两个函数，分别是`createStore`和`useGlobalPlugins`:
 * `createStore` - 创建store，所有的操作都基于此，第一个参数必选，是初始化数据，第二个参数可选，是store的名称。
 * `useGlobalPlugins` - 全局使用插件，全局使用的意思是使用插件后，所有通过createStore生成的store实例均会应用这些插件。参数必选，是一个数组。如果需要全局使用，必须保证该方法在`createStore`创建Store实例前。
+> 提示：`useGlobalPlugins`会将插件作用于所有store实例，不提供过滤功能，如果特定的插件只希望给特定的store生效，需要在插件内部实现，插件需要暴露一个方法来过滤store.name。
 
 ### 核心api(method)
 * `state` - 获取当前store的state状态，参数可选，是个回调函数，如果在js文件里获取，省略参数即可，如果在组件内使用，或者需要在js文件里实现watch操作，则需要在参数里绑定数据。
@@ -25,6 +26,7 @@ npm包导出两个函数，分别是`createStore`和`useGlobalPlugins`:
 ### 核心api(property)
 * name - 当前store的名称，用于插件开发。
 * _state - 当前store的svelte/store，用于直接在svelte组件内展示或插件开发。
+* willUseGlobalPlugin - 当前store是否使用了`useGlobalPlugins`来挂载全局插件，用于插件开发，插件内部可以通过该字段来区分单独模块调用和全局调用的逻辑。
 
 ### 开发插件api
 [doc](./plugin.md)
